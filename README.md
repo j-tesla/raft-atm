@@ -5,3 +5,8 @@ The objective of this project is to familiarize with the RAFT consensus.
 ## Features
 + Consistency
 + Fault tolerance
+
+## Usage 
+```
+$ python3 main.py self_addr partner_addr1 partner_addr2 ...
+``` 
