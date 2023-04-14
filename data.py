@@ -5,7 +5,8 @@ from pysyncobj import SyncObj, SyncObjConf, replicated_sync
 
 class Data(SyncObj):
     def __init__(self, self_node, other_nodes):
-        cfg = SyncObjConf(dynamicMembershipChange=True, journalFile=f'.journals/journal_{self_node}.journal')
+        self_node_norm = self_node.replace(':', '_')
+        cfg = SyncObjConf(dynamicMembershipChange=True, journalFile=f'.journals/journal_{self_node_norm}.journal')
         super().__init__(self_node, other_nodes, cfg)
         self._balances = defaultdict(int)
 
